@@ -1,9 +1,186 @@
+<!-- 
+Copyright © Lucy Poulton 2020. All rights reserved.
+
+This code is a little bit messy - sorry about that! My normal
+stuff is much tidier.
+-->
+
+
 <!DOCTYPE html>
+
 <html>
-	<head>
-		<title>__lucyy</title>
-	</head>
-	<body>
-		<h1>Nothing here yet! :c</h1>
-	</body>
+
+<head>
+	<title>__lucyy</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+		@import url("https://kit-free.fontawesome.com/releases/latest/css/free.min.css");
+
+		* {
+			--gradient: linear-gradient(135deg, rgba(250, 158, 250, 1) 0%, rgba(157, 172, 250, 1) 100%);
+			--shadow: #3335 0 0 5px;
+		}
+
+		body {
+			font-size: 20px;
+			margin: 0;
+			font-family: 'Work Sans', sans-serif;
+		}
+
+		h1,
+		.container p {
+			text-align: center;
+		}
+
+		.header {
+			background: var(--gradient);
+			box-shadow: var(--shadow);
+			width: 100%;
+			height: 80px;
+			font-size: 25px;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+		}
+
+		.header>* {
+			margin-left: 20px;
+			color: white;
+		}
+
+		.header img {
+			border-radius: 10px;
+		}
+
+		.header .fab,
+		.header .fas {
+			transition: text-shadow, font-size 0.2s ease;
+			box-sizing: border-box;
+			width: 30px;
+			position: relative;
+		}
+
+		.header .fab:hover,
+		.header .fas:hover {
+			text-shadow: var(--shadow);
+			font-size: 30px;
+		}
+
+		.modal {
+			background-color: #333;
+			position: absolute;
+			color: white;
+			text-align: center;
+			margin: auto;
+			width: 60px;
+			left: calc(50% - 30px);
+			top: 90px;
+			border-radius: 10px;
+			padding: 3px 10px;
+			opacity: 0;
+			transition: opacity 0.2s;
+		}
+
+		.fadeIn {
+			opacity: 1;
+		}
+
+		.flowbox {
+			display: flex;
+			justify-content: center;
+		}
+
+		.flowbox > div {
+			width:400px;
+			margin: 5px;
+			font-size: 18px;
+		}
+	</style>
+</head>
+
+<body>
+	<script>
+		function copyDiscord() {
+			let textArea = document.createElement("textarea");
+			textArea.value = "__lucyy#9283";
+
+			// Avoid scrolling to bottom
+			textArea.style.top = "0";
+			textArea.style.left = "0";
+			textArea.style.position = "fixed";
+
+			document.body.appendChild(textArea);
+			textArea.focus();
+			textArea.select();
+
+			document.execCommand('copy');
+
+			document.body.removeChild(textArea);
+
+			let copyModal = document.createElement("div");
+			copyModal.classList.add("modal");
+			copyModal.innerHTML = `Copied!`;
+			document.body.appendChild(copyModal);
+
+			setTimeout(() => copyModal.classList.add("fadeIn"), 10);
+			setTimeout(() => copyModal.classList.remove("fadeIn"), 1500);
+			setTimeout(() => copyModal.remove(), 2000);
+		}
+
+		function github() {
+			window.open("https://github.com/lucyy-mc", "_blank");
+		}
+
+	</script>
+
+	<div class="header">
+		<img src=https://cravatar.eu/helmavatar/7bc5888e02bd48fda1770c46632e14c3/64>
+		<span>__lucyy</span>
+		<i onclick="copyDiscord()" class="fab fa-discord"></i>
+		<a href="mailto:lucy@poulton.xyz"><i class="fas fa-envelope"></i></a>
+		<i onclick="github()" class="fab fa-github"></i>
+	</div>
+	<div class="container">
+		<h1 style="text-align: center;">(WIP) Hey, thanks for stopping by!</h1>
+		<div style="text-align: center; width:80%; margin: auto">
+			<p>
+				I'm Lucy. I've been working with computers and
+				programming for more than half my life now.
+				I've picked up all kinds of skills along the way and I love to use them to help others.
+				My specialism is in Minecraft servers (specfically Bukkit and BungeeCord), but I'm
+				flexible and capable of much more. If you're after something specific, please do get in
+				touch!
+			</p>
+			<p>
+				I try not to take myself too seriously, but I have a keen eye for detail and take pride in
+				producing the absolute best work that I can.
+			</p>
+			<p>
+				I'm full-stack - no job is too big or small! <i class="fab fa-java"></i>
+				<i class="fab fa-python"></i>
+				<i class="fab fa-html5"></i>
+				<i class="fab fa-css3-alt"></i>
+				<i class="fab fa-js"></i>
+				<i class="fab fa-angular"></i>
+				<i class="fas fa-terminal"></i>
+				<span>C#</span>
+			</p>
+			<h1 style="margin-bottom: 0;">Portfolio</h1>
+			<p style="margin-top: 0;">Here's some of my more recent work.</p>
+			<div class="flowbox">
+				<div>
+					<h1>TeemL</h1>
+					<span>TeemL is where you'll probably find me the most. The group is my creation, we're a
+						 bunch of small server owners all working together to achieve the best we can.
+					</span>
+				</div>
+				<div>
+					<h1>Endercraft</h1>
+				</div>
+			</div>
+		</div>
+</body>
+
 </html>
