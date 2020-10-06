@@ -21,10 +21,17 @@ stuff is much tidier.
 			--shadow: #3335 0 0 5px;
 		}
 
+
 		body {
-			font-size: 20px;
+			font-size: 21px;
 			margin: 0;
 			font-family: 'Work Sans', sans-serif;
+		}
+
+		@media screen and (max-width: 768px) {
+			body {
+				font-size: 25px;
+			}
 		}
 
 		h1,
@@ -37,12 +44,14 @@ stuff is much tidier.
 			box-shadow: var(--shadow);
 			width: 100%;
 			height: 80px;
-			font-size: 25px;
+			font-size: 1.6rem;
 			text-align: center;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			color: white;
+			border-radius: 10px;
+			margin-bottom: 10px;
 		}
 
 		.header>* {
@@ -90,12 +99,23 @@ stuff is much tidier.
 		.flowbox {
 			display: flex;
 			justify-content: center;
+			flex-wrap: wrap;
 		}
 
-		.flowbox > div {
-			width:400px;
-			margin: 5px;
+		.flowbox>div {
+			width: 400px;
+			margin: 20px;
+			margin-bottom: 40px;
 			font-size: 18px;
+		}
+
+		.header>img {
+			height: 2em;
+		}
+
+		.flowbox .header a {
+			/* font-size: 0.7em; */
+			margin-right: 20px;
 		}
 	</style>
 </head>
@@ -135,7 +155,7 @@ stuff is much tidier.
 
 	</script>
 
-	<div class="header">
+	<div class="header" style="border-radius: 0;">
 		<img src=https://cravatar.eu/helmavatar/7bc5888e02bd48fda1770c46632e14c3/64>
 		<span>__lucyy</span>
 		<i onclick="copyDiscord()" class="fab fa-discord"></i>
@@ -171,13 +191,66 @@ stuff is much tidier.
 			<p style="margin-top: 0;">Here's some of my more recent work.</p>
 			<div class="flowbox">
 				<div>
-					<h1>TeemL</h1>
+					<div class="header">
+						<img src="https://teeml.net/assets/png/teeml-round.png">
+						<a href="https://teeml.net">TeemL</a>
+					</div>
 					<span>TeemL is where you'll probably find me the most. The group is my creation, we're a
-						 bunch of small server owners all working together to achieve the best we can.
+						bunch of small server owners all working together to achieve the best we can.
 					</span>
+					<ul>
+						<li>Web design <i class="fab fa-html5"></i>
+							<i class="fab fa-css3-alt"></i>
+							<i class="fab fa-js"></i></li>
+						<li>Discord bots and tools
+							<i class="fab fa-java"></i>
+							<i class="fab fa-python"></i>
+						</li>
+						<li>System administration
+							<i class="fas fa-terminal"></i>
+						</li>
+					</ul>
 				</div>
+
 				<div>
-					<h1>Endercraft</h1>
+					<div class="header">
+						<img
+							src="https://cdn.discordapp.com/icons/740665741098877019/7fcceeaa49753a4d078aba6f257065dd.png?size=64">
+						<a href="https://endercraft.co">Endercraft</a>
+					</div>
+					<span>
+						Endercraft is an up-and-coming Minecraft server that I act as the lead developer for.
+
+					</span>
+					<ul>
+						<li>Minecraft plugins
+							<i class="fab fa-java"></i>
+						</li>
+						<li>Discord bots and tools
+							<i class="fab fa-java"></i>
+							<i class="fab fa-python"></i>
+						</li>
+						<li>System administration
+							<i class="fas fa-terminal"></i>
+						</li>
+					</ul>
+				</div>
+
+				<div>
+					<div class="header">
+						<img src="https://vignette.wikia.nocookie.net/minecraft/images/f/fe/GrassNew.png">
+						<a href="https://teeml.net">MC Server Tools</a>
+					</div>
+					<span>
+						<p>(NOT AFFILIATED WITH MOJANG)</p>
+						Over the years I've put together a few web tools to make administering Minecraft servers
+						a little easier.
+					</span>
+					<ul>
+						<li>Web tools <i class="fab fa-html5"></i>
+							<i class="fab fa-css3-alt"></i>
+							<i class="fab fa-js"></i></li>
+					</ul>
 				</div>
 			</div>
 		</div>
