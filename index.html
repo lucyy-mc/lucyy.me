@@ -16,6 +16,10 @@ stuff is much tidier.
 		@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
 		@import url("https://kit-free.fontawesome.com/releases/latest/css/free.min.css");
 
+		:root {
+			font-size: 18px;
+		}
+
 		* {
 			--gradient: linear-gradient(135deg, rgba(250, 158, 250, 1) 0%, rgba(157, 172, 250, 1) 100%);
 			--shadow: #3335 0 0 5px;
@@ -23,19 +27,12 @@ stuff is much tidier.
 
 
 		body {
-			font-size: 21px;
+			font-size: 1rem;
 			margin: 0;
 			font-family: 'Work Sans', sans-serif;
 		}
 
-		@media screen and (max-width: 768px) {
-			body {
-				font-size: 25px;
-			}
-		}
-
-		h1,
-		.container p {
+		h1, .container p {
 			text-align: center;
 		}
 
@@ -43,7 +40,7 @@ stuff is much tidier.
 			background: var(--gradient);
 			box-shadow: var(--shadow);
 			width: 100%;
-			height: 80px;
+			height: 5rem;
 			font-size: 1.6rem;
 			text-align: center;
 			display: flex;
@@ -55,7 +52,7 @@ stuff is much tidier.
 		}
 
 		.header>* {
-			margin-left: 20px;
+			margin-left: 1rem;
 			color: white;
 		}
 
@@ -105,8 +102,8 @@ stuff is much tidier.
 		.flowbox>div {
 			width: 400px;
 			margin: 20px;
-			margin-bottom: 40px;
-			font-size: 18px;
+			margin-bottom: 80px;
+			font-size: 1rem;
 		}
 
 		.header>img {
@@ -116,6 +113,17 @@ stuff is much tidier.
 		.flowbox .header a {
 			/* font-size: 0.7em; */
 			margin-right: 20px;
+		}
+
+		@media screen and (orientation: portrait) {
+			:root {
+				font-size: 30px;
+			}
+			.flowbox > div, .container > * {
+				width:90%;
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 	</style>
 </head>
@@ -162,9 +170,9 @@ stuff is much tidier.
 		<a href="mailto:lucy@poulton.xyz"><i class="fas fa-envelope"></i></a>
 		<i onclick="github()" class="fab fa-github"></i>
 	</div>
-	<div class="container">
+	<div class="container" style="margin:20px">
 		<h1 style="text-align: center;">(WIP) Hey, thanks for stopping by!</h1>
-		<div style="text-align: center; width:80%; margin: auto">
+		<div style="text-align: center">
 			<p>
 				I'm Lucy. I've been working with computers and
 				programming for more than half my life now.
@@ -187,7 +195,7 @@ stuff is much tidier.
 				<i class="fas fa-terminal"></i>
 				<span>C#</span>
 			</p>
-			<h1 style="margin-bottom: 0;">Portfolio</h1>
+			<h1 style="margin-bottom: 0;margin-top:80px">Portfolio</h1>
 			<p style="margin-top: 0;">Here's some of my more recent work.</p>
 			<div class="flowbox">
 				<div>
