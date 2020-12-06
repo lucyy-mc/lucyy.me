@@ -1,0 +1,17 @@
+{
+	"latest": {
+		"version": "0.0.0-pre5",
+		"download": "https://www.spigotmc.org/resources/pronouns.86199/download?version=370800"
+	},
+	"oldVersions":
+	[
+		{
+			"version": "0.0.0-pre4",
+			"download": "https://www.spigotmc.org/resources/pronouns.86199/download?version=370013"
+		},
+		{
+			"version": "0.0.0-pre3",
+			"download": "https://www.spigotmc.org/resources/pronouns.86199/download?version=369427"
+		}
+	]
+}
