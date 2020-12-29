@@ -12,120 +12,7 @@ stuff is much tidier.
 
 <head>
 	<title>__lucyy</title>
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
-		@import url("https://kit-free.fontawesome.com/releases/latest/css/free.min.css");
-
-		:root {
-			font-size: 18px;
-		}
-
-		* {
-			--gradient: linear-gradient(135deg, rgba(250, 158, 250, 1) 0%, rgba(157, 172, 250, 1) 100%);
-			--shadow: #3335 0 0 5px;
-		}
-
-
-		body {
-			font-size: 1rem;
-			margin: 0;
-			font-family: 'Work Sans', sans-serif;
-		}
-
-		h1, .container p {
-			text-align: center;
-		}
-
-		.header {
-			background: var(--gradient);
-			box-shadow: var(--shadow);
-			width: 100%;
-			height: 5rem;
-			font-size: 1.6rem;
-			text-align: center;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: white;
-			border-radius: 10px;
-			margin-bottom: 10px;
-		}
-
-		.header>* {
-			margin-left: 1rem;
-			color: white;
-		}
-
-		.header img {
-			border-radius: 10px;
-		}
-
-		.header .fab,
-		.header .fas {
-			transition: text-shadow, font-size 0.2s ease;
-			box-sizing: border-box;
-			width: 30px;
-			position: relative;
-		}
-
-		.header .fab:hover,
-		.header .fas:hover {
-			text-shadow: var(--shadow);
-			font-size: 30px;
-		}
-
-		.modal {
-			background-color: #333;
-			position: absolute;
-			color: white;
-			text-align: center;
-			margin: auto;
-			width: 60px;
-			left: calc(50% - 30px);
-			top: 90px;
-			border-radius: 10px;
-			padding: 3px 10px;
-			opacity: 0;
-			transition: opacity 0.2s;
-		}
-
-		.fadeIn {
-			opacity: 1;
-		}
-
-		.flowbox {
-			display: flex;
-			justify-content: center;
-			flex-wrap: wrap;
-		}
-
-		.flowbox>div {
-			width: 400px;
-			margin: 20px;
-			margin-bottom: 80px;
-			font-size: 1rem;
-		}
-
-		.header>img {
-			height: 2em;
-		}
-
-		.flowbox .header a {
-			/* font-size: 0.7em; */
-			margin-right: 20px;
-		}
-
-		@media screen and (orientation: portrait) {
-			:root {
-				font-size: 30px;
-			}
-			.flowbox > div, .container > * {
-				width:90%;
-				margin-left: auto;
-				margin-right: auto;
-			}
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
 <body>
@@ -197,57 +84,24 @@ stuff is much tidier.
 			</p>
 			<h1 style="margin-bottom: 0;margin-top:80px">Portfolio</h1>
 			<p style="margin-top: 0;">Here's some of my more recent work.</p>
-			<div class="flowbox">
+			<div class="flowbox">	
 				<div>
 					<div class="header">
-						<img src="https://teeml.net/assets/png/teeml-round.png">
-						<a href="https://teeml.net">TeemL</a>
-					</div>
-					<span>TeemL is where you'll probably find me the most. The group is my creation, we're a
-						bunch of small server owners all working together to achieve the best we can.
-					</span>
-					<ul>
-						<li>Web design <i class="fab fa-html5"></i>
-							<i class="fab fa-css3-alt"></i>
-							<i class="fab fa-js"></i></li>
-						<li>Discord bots and tools
-							<i class="fab fa-java"></i>
-							<i class="fab fa-python"></i>
-						</li>
-						<li>System administration
-							<i class="fas fa-terminal"></i>
-						</li>
-					</ul>
-				</div>
-
-				<div>
-					<div class="header">
-						<img
-							src="https://cdn.discordapp.com/icons/740665741098877019/7fcceeaa49753a4d078aba6f257065dd.png?size=64">
-						<a href="https://endercraft.co">Endercraft</a>
+						<img src="icons/pronouns/pronouns-white-nobg-1024.png">
+						<a href="https://lucyy.me/pronouns">ProNouns</a>
 					</div>
 					<span>
-						Endercraft is an up-and-coming Minecraft server that I act as the lead developer for.
-
-					</span>
+						Putting the "pro" in "pronouns".</span>
 					<ul>
-						<li>Minecraft plugins
+						<li>Spigot plugin
 							<i class="fab fa-java"></i>
-						</li>
-						<li>Discord bots and tools
-							<i class="fab fa-java"></i>
-							<i class="fab fa-python"></i>
-						</li>
-						<li>System administration
-							<i class="fas fa-terminal"></i>
 						</li>
 					</ul>
 				</div>
 				<div>
 					<div class="header">
-						<img
-							src="https://ecomc.github.io/QTBot-page/pictures/logo.png">
-						<a href="https://ecomc.github.io/QTBot-page/">QT Bot</a>
+						<img src="https://cdn.discordapp.com/icons/771130052162879539/641ddf6cc5af224f0fa363e26c964fbb.webp?size=128">
+						<a href="https://top.gg/bot/757233366612574248">QT Bot</a>
 					</div>
 					<span>
 						QT Bot is the most wholesome Discord bot to ever exist. I work on it with some friends.
@@ -262,7 +116,7 @@ stuff is much tidier.
 				<div>
 					<div class="header">
 						<img src="grass.webp">
-						<a href="#">MC Server Tools</a>
+						<a href="#">Server Tools for MC</a>
 					</div>
 					<span>
 						<p style="font-size: 0.8em;">(still sorting out hosting for these, they'll be up soon!)</p>
