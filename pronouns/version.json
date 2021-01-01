@@ -1,14 +1,17 @@
 {
 	"latest": {
-		"version": "0.0.0-pre6",
-		"download": "https://www.spigotmc.org/resources/pronouns.86199/download?version=373122"
+		"version": "0.0.0-pre7",
+		"download": "https://www.spigotmc.org/resources/pronouns.86199/download?version=375019"
 	},
 	"oldVersions": [
+		{
+			"version": "0.0.0-pre6",
+			"download": "https://www.spigotmc.org/resources/pronouns.86199/download?version=373122"
+		},
 		{
 			"version": "0.0.0-pre5",
 			"download": "https://www.spigotmc.org/resources/pronouns.86199/download?version=370800"
 		},
-	
 		{
 			"version": "0.0.0-pre4",
 			"download": "https://www.spigotmc.org/resources/pronouns.86199/download?version=370013"
