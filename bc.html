@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            :root {
+                font-family: 'Century Gothic', 'MS Gothic';
+            }
+            
+            body {
+                background-color: gray;
+            }
+        
+            .card {
+                width:91mm;
+                height:55mm;
+                background-color: white;
+            }
+
+            .card-inner {
+                padding: 10px 15px;
+                box-sizing: border-box;
+                display: flex;
+            }
+            .card-inner > * {
+                width:50%;
+            }
+            .co-name {
+                padding: 10px 15px;
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: white;
+                background: #16db93;
+            }
+
+            .role {
+                margin-top:4mm;
+            }
+            
+            .name > p {
+                margin: 0;
+            }
+            .name-jp {
+                font-size:14px;
+            }     
+            
+            .middle {
+                width:1px;
+                background-color: #16db93;
+            }
+            
+            .left, .right {
+                width: calc(50% - 0.5px);
+            }
+            .right {
+                font-size: 12px;
+                padding-left: 20px;
+                box-sizing: border-box;;
+            }
+            .right > p {
+                margin: 2px 0;
+                display: flex;
+                align-items: center;
+            }
+            .right > p > span {
+                margin-left:10px;
+            }
+        </style>
+    </head>
+<body>
+    <div class="card">
+        <div class="co-name">
+            Poulton Software Ltd.
+        </div>
+        <div class="card-inner">
+            <div class="left">
+        <div class="name">
+            <p class="name-en">Lucy Poulton</p>
+            <p class="name-jp">ポウトン　ルーシー</p>
+        </div>
+        <div class="role">
+            Developer
+            Translator
+        </div>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p><ion-icon name="mail-outline"></ion-icon> <span>lucy@poulton.xyz</span></p>
+            <p><ion-icon name="globe-outline"></ion-icon> <span>www.poulton.xyz</span></p>
+        </div>
+    </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+</body>
+</html>
