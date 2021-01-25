@@ -134,7 +134,7 @@
       <div class="flowbox">
 	      <div> 
               <div class="header">Settings</div>
-              <div><span>Input Mode</span> <label onclick="setFormat('legacy')"><input id="legacy" type="radio" name="format">Legacy</label> <label onclick="setFormat('json')" style="padding-left: 10px"><input type="radio" name="format">JSON (tellraw)</label> </div>
+              <div><span>Input Mode</span> <label onclick="setFormat('legacy')"><input id="legacy" type="radio" name="format">Legacy</label> <label onclick="setFormat('json')" style="padding-left: 10px"><input type="radio" name="format" checked>JSON (tellraw)</label> </div>
           </div>
           <div class="values">
             <div class="header">Codes</div>
@@ -172,10 +172,6 @@
               <div style="background-color: var(--color-8)" onclick="addCode(event,'k')">Obfuscated</div>
               <div style="background-color: var(--color-8)" onclick="addCode(event,'r')">Reset</div>
             </span>
-          </div>
-          <div>
-              <div class="header">Presets</div><button style="float:right" onclick="addPreset(document.getElementById('tagInput').value)">Add New</button>
-              <ul id="presetList"></ul>
           </div>
       </div> 
       <span style="display:flex;color:#999;font-size: 0.8rem;align-items: center;justify-content: center;padding-bottom:10px">

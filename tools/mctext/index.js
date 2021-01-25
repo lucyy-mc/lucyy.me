@@ -1,6 +1,7 @@
 // Copyright © Lucy Poulton 2020. All rights reserved.
 
 let format = "legacy";
+let lastJsonColor = "white";
 
 function formatTextLegacy(text) {
 
@@ -75,10 +76,11 @@ function parseTextComponent(component) {
     if (component["color"]) {
         if (component["color"][0] == "#" && component["color"].length == 7) span.style.color = component["color"];
         else span.style.color = `var(--color-${component["color"]})`;
-    }
+        lastJsonColor = span.style.color;
+    } else span.style.color = lastJsonColor;
     var output = span.outerHTML;
     if (component["extra"]) {
-        for (var obj of component[extra]) {
+        for (var obj of component["extra"]) {
                 output += parseTextComponent(obj);
             }
     }
@@ -118,35 +120,6 @@ function addCode(e, code) {
 
 function updateText(value) {
     document.getElementById("text").innerHTML = formatText(value);
-}
-
-function getPresets() {
-    if (localStorage.getItem("presets") === null) localStorage.setItem("presets", "[]");
-    return JSON.parse(localStorage.getItem("presets"));
-}
-
-function savePresets(presets) {
-    localStorage.setItem("presets", JSON.stringify(presets));
-    updatePresetsUi();
-}
-
-function addPreset(preset) {
-    let presets = getPresets();
-    if (presets.includes(preset)) return;
-    presets.push(preset);
-    savePresets(presets);
-}
-
-function removePreset(preset) {
-    savePresets(getPresets().filter(x => x !== preset));
-}
-
-function updatePresetsUi() {
-    let presetList = document.getElementById("presetList");
-    presetList.innerHTML = "";
-    for (let preset of getPresets()) {
-        presetList.innerHTML += `<li class="mc"> <span style="font-size:24px">${formatText(preset)}</span>  <br />  ${preset} <button class="delButton" onclick="removePreset('${preset}')">✖</span></li> `;
-    }
 }
 
 function setFormat(newFormat) {

@@ -4,6 +4,8 @@
         <style>
             :root {
                 font-family: 'Century Gothic', 'MS Gothic';
+                --accent: linear-gradient(135deg, hsl(158, 82%, 47%), 
+                hsl(209, 50%, 57%));
             }
             
             body {
@@ -14,26 +16,30 @@
                 width:91mm;
                 height:55mm;
                 background-color: white;
+                color:black;
+                display: flex;
+                flex-direction: column;
             }
 
             .card-inner {
-                padding: 10px 15px;
+                padding: 25px 15px;
                 box-sizing: border-box;
                 display: flex;
+                flex-grow: 1;
             }
             .card-inner > * {
-                width:50%;
+                width: calc(50% - 1px);
             }
             .co-name {
                 padding: 10px 15px;
                 font-size: 24px;
-                margin-bottom: 10px;
                 color: white;
-                background: #16db93;
+                background: var(--accent);
             }
 
             .role {
                 margin-top:4mm;
+                font-size: 12px;
             }
             
             .name > p {
@@ -45,11 +51,7 @@
             
             .middle {
                 width:1px;
-                background-color: #16db93;
-            }
-            
-            .left, .right {
-                width: calc(50% - 0.5px);
+                background: var(--accent);
             }
             .right {
                 font-size: 12px;
@@ -78,14 +80,15 @@
             <p class="name-jp">ポウトン　ルーシー</p>
         </div>
         <div class="role">
-            Developer
-            Translator
+            Developer<br/>
+            EN/JP Translator
         </div>
         </div>
         <div class="middle"></div>
         <div class="right">
             <p><ion-icon name="mail-outline"></ion-icon> <span>lucy@poulton.xyz</span></p>
             <p><ion-icon name="globe-outline"></ion-icon> <span>www.poulton.xyz</span></p>
+            <p><ion-icon name="call-outline"></ion-icon> <span>+44 333 88888888</span></p>
         </div>
     </div>
     </div>

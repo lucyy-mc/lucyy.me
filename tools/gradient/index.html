@@ -72,14 +72,14 @@
 		}
 
 		.display {
-			min-height: 40px;
+			min-height: 45px;
+			overflow-wrap: anywhere;
 		}
 
-		.display span {
-			width: 40px;
-			height: 40px;
-			margin: 2px;
-			display: inline-block;
+		#export > * {
+			width: 100%;
+			margin-bottom: 5px;
+			box-sizing: border-box;
 		}
 	</style>
 </head>
@@ -99,32 +99,35 @@
 		<div class="flowbox">
 			<div id="settings">
 				<div class="header">Settings</div>
-				<div><span>Forwards/backwards</span> <input id="direction-box" type="checkbox"></div>
-				<div><label for="steps-box">Steps</label><input type="text" id="steps-box">
-					<input oninput="onSlide()" id="steps-range" type="range" min="2" max="255">
+				<div><label for="textin-box">Text</label><input oninput="onBoxEdit()" type="text" id="textin-box" style="width:100%">
 				</div>
-				<div><label for="hue1-box">Hue 1</label><input type="text" id="hue1-box">
+				<div><label for="hue1-box">Hue 1</label><input oninput="onBoxEdit()" type="text" id="hue1-box">
 					<input oninput="onSlide()" id="hue1-range" type="range" min="0" max="360">
 				</div>
-				<div><label for="hue2-box">Hue 2</label><input type="text" id="hue2-box">
+				<div><label for="hue2-box">Hue 2</label><input oninput="onBoxEdit()" type="text" id="hue2-box">
 					<input oninput="onSlide()" id="hue2-range" type="range" min="0" max="360">
 				</div>
-				<div><label for="sat-box">Sat. </label><input type="text" id="sat-box">
+				<div><label for="sat-box">Sat. </label><input oninput="onBoxEdit()" type="text" id="sat-box">
 					<input oninput="onSlide()" id="sat-range" type="range" min="0" max="100">
 				</div>
-				<div><label for="light-box">Light</label><input type="text" id="light-box">
+				<div><label for="light-box">Light</label><input oninput="onBoxEdit()" type="text" id="light-box">
 					<input oninput="onSlide()" id="light-range" type="range" min="0" max="100">
 				</div>
+			</div>
+
+			<div id="export">
+				<div class="header">Export</div>
+				<select oninput="exportText()" id="export-format">
+					<option value="json">JSON</option>
+					<option value="spigot">&x (Spigot/Bungee)</option>
+					<option value="cmi">{#hex} (CMI)</option>
+				</select>
+				<textarea id="export-box" readonly style="height: 120px;border:none;background:#444;color:white"></textarea>
 			</div>
 		</div>
 		<span
 			style="display:flex;color:#999;font-size: 0.8rem;align-items: center;justify-content: center;padding-bottom:10px">
-			© Lucy Poulton 2020 | Girl in training <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480"
-				style="height:1em;border-radius:0.2em;margin-left: 5px;">
-				<path fill="#5BCEFA" d="M0 0h800v480H0z"></path>
-				<path fill="#F5A9B8" d="M0 96h800v288H0z"></path>
-				<path fill="#FFF" d="M0 192h800v96H0z"></path>
-			</svg></span>
+			© Lucy Poulton 2020 | Not affiliated or endorsed by Mojang</span>
 	</div>
 	<script src="index.js"></script>
 </body>
