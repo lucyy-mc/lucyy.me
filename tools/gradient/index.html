@@ -1,0 +1,132 @@
+<!-- Copyright © Lucy Poulton 2020. All rights reserved. -->
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="theme-color" content="#333">
+	<link rel="stylesheet" href="/index.css">
+	<script src="index.js"></script>
+	<title>HSL Gradient Creator</title>
+	<style>
+		body {
+			background: #333;
+			color: white;
+		}
+
+		.values>span>div {
+			height: 40px;
+			width: 25%;
+			margin: 5px;
+			border-radius: 10px;
+			text-align: center;
+			font-size: 14px;
+		}
+
+		.formatValues>div {
+			width: 33% !important;
+		}
+
+		.widgetContainer>div {
+			width: 400px;
+			height: 175px;
+			margin: 20px;
+			padding: 15px;
+			box-shadow: none;
+			color: unset;
+			background-color: unset;
+		}
+
+		.widgetContainer>div {
+			height: unset !important;
+		}
+
+		input[type="radio"] {
+			margin-top: -1px;
+			vertical-align: middle;
+		}
+
+		#settings input[type="text"] {
+			width: 30px;
+		}
+
+		#settings input[type="range"] {
+			vertical-align: middle;
+			flex-grow: 1;
+		}
+
+		#settings>div:not(.header) {
+			display: flex;
+			margin: 10px;
+			align-items: center;
+		}
+
+		#settings label {
+			width: 55px;
+		}
+
+		#settings>div:not(.header)>* {
+			margin: 0 5px;
+			text-align: center;
+		}
+
+		.display {
+			min-height: 40px;
+		}
+
+		.display span {
+			width: 40px;
+			height: 40px;
+			margin: 2px;
+			display: inline-block;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="header" style="border-radius: 0">
+		<span>Lucy's HSL Gradient Creator</span>
+	</div>
+
+	<div class="container">
+		<div class="jumbo">
+			<h1 style="text-align: center;">
+				<div id="text" class="display"></div>
+			</h1>
+		</div>
+
+		<div class="flowbox">
+			<div id="settings">
+				<div class="header">Settings</div>
+				<div><span>Forwards/backwards</span> <input id="direction-box" type="checkbox"></div>
+				<div><label for="steps-box">Steps</label><input type="text" id="steps-box">
+					<input oninput="onSlide()" id="steps-range" type="range" min="2" max="255">
+				</div>
+				<div><label for="hue1-box">Hue 1</label><input type="text" id="hue1-box">
+					<input oninput="onSlide()" id="hue1-range" type="range" min="0" max="360">
+				</div>
+				<div><label for="hue2-box">Hue 2</label><input type="text" id="hue2-box">
+					<input oninput="onSlide()" id="hue2-range" type="range" min="0" max="360">
+				</div>
+				<div><label for="sat-box">Sat. </label><input type="text" id="sat-box">
+					<input oninput="onSlide()" id="sat-range" type="range" min="0" max="100">
+				</div>
+				<div><label for="light-box">Light</label><input type="text" id="light-box">
+					<input oninput="onSlide()" id="light-range" type="range" min="0" max="100">
+				</div>
+			</div>
+		</div>
+		<span
+			style="display:flex;color:#999;font-size: 0.8rem;align-items: center;justify-content: center;padding-bottom:10px">
+			© Lucy Poulton 2020 | Girl in training <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480"
+				style="height:1em;border-radius:0.2em;margin-left: 5px;">
+				<path fill="#5BCEFA" d="M0 0h800v480H0z"></path>
+				<path fill="#F5A9B8" d="M0 96h800v288H0z"></path>
+				<path fill="#FFF" d="M0 192h800v96H0z"></path>
+			</svg></span>
+	</div>
+	<script src="index.js"></script>
+</body>
+
+</html>

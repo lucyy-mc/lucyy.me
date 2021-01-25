@@ -1,0 +1,193 @@
+<!-- Copyright © Lucy Poulton 2020. All rights reserved. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#333">
+    <link rel="stylesheet" href="/index.css">
+    <script src="index.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+    <title>Minecraft Server Text Editor</title>
+    <style>
+	
+	body {
+		background: #333;
+		color: white;
+	}
+
+      .values > span > div {
+        height:40px;
+        width:25%;
+        margin:5px;
+        border-radius: 10px;
+        text-align: center;
+        font-size:14px;
+      }
+      
+      .formatValues > div {
+        width:33% !important;
+      }
+      .widgetContainer > div {
+        width: 400px;
+        height: 175px;
+        margin: 20px;
+        padding: 15px;
+        box-shadow: none;
+        color: unset;
+        background-color: unset;
+      }
+      :root {
+        --color-0: #000000;
+        --color-1: #0000AA;
+        --color-2: #00AA00;
+        --color-3: #00AAAA;
+        --color-4: #AA0000;
+        --color-5: #AA00AA;
+        --color-6: #FFAA00;
+        --color-7: #AAAAAA;
+        --color-8: #555555;
+        --color-9: #5555FF;
+        --color-a: #55FF55;
+        --color-b: #55FFFF;
+        --color-c: #FF5555;
+        --color-d: #FF55FF;
+        --color-e: #FFFF55;
+        --color-f: #FFFFFF;
+        --color-black: #000000;
+        --color-dark_blue: #0000AA;
+        --color-dark_green: #00AA00;
+        --color-dark_aqua: #00AAAA;
+        --color-dark_red: #AA0000;
+        --color-dark_purple: #AA00AA;
+        --color-gold: #FFAA00;
+        --color-gray: #AAAAAA;
+        --color-dark_gray: #555555;
+        --color-blue: #5555FF;
+        --color-green: #55FF55;
+        --color-aqua: #55FFFF;
+        --color-red: #FF5555;
+        --color-light_purple: #FF55FF;
+        --color-yellow: #FFFF55;
+        --color-white: #FFFFFF;
+      }
+      .widgetContainer > div {
+        height: unset !important;
+      }
+
+      .delButton {
+        float:right;
+        background:var(--color-8); 
+        border-radius:20px;
+        height: 18px;
+        width:18px;
+        text-align: center;
+        border: none;
+        text-decoration: none;
+        padding:0;
+        color:white;
+      }
+      @font-face {
+        font-family:"Minecraft Bold";
+        src: url("Minecraft-Bold.woff") format("woff");
+        font-weight:normal;
+        font-style:normal;
+      }
+      @font-face {
+        font-family:"Minecraft";
+        src: url("Minecraft-Regular.woff") format("woff");
+        font-weight:normal;
+        font-style:normal;
+      }
+      
+      .mc * {
+        font-family: "Minecraft";
+      }
+      .mc-bold {
+        font-family: "Minecraft Bold" !important;
+      }
+      
+      .mc-italic {
+        font-style:italic;
+       }
+      code {
+        font-family: monospace;
+        font-size: 11px;
+      }
+      input[type="radio"] {
+        margin-top: -1px;
+        vertical-align: middle;
+      }
+  </style>
+  </head>
+  <body>
+    <div class="header" style="border-radius: 0">
+	    <span>Lucy's MC Text Editor</span>  
+    </div>
+
+    <div class="container">
+      <div class="jumbo" style="">
+        <h1 style="text-align: center;"> <span id="text" class="mc" style="font-weight: normal; font-family: Minecraft !important;">text<span></span></h1>
+        <input type="text" style="margin:auto;display:block;color:black; width:75%; text-align:center" oninput="updateText(this.value)" id="tagInput">
+      </div>
+
+      <div class="flowbox">
+	      <div> 
+              <div class="header">Settings</div>
+              <div><span>Input Mode</span> <label onclick="setFormat('legacy')"><input id="legacy" type="radio" name="format">Legacy</label> <label onclick="setFormat('json')" style="padding-left: 10px"><input type="radio" name="format">JSON (tellraw)</label> </div>
+          </div>
+          <div class="values">
+            <div class="header">Codes</div>
+             <span style="display:flex">
+              <div style="background-color: var(--color-0)" onclick="addCode(event,0)"><code>black</code><br/>0</div>
+              <div style="background-color: var(--color-1)" onclick="addCode(event,1)"><code>dark_blue</code><br/>1</div>
+              <div style="background-color: var(--color-2)" onclick="addCode(event,2)"><code>dark_green</code><br/>2</div>
+              <div style="background-color: var(--color-3)" onclick="addCode(event,3)"><code>dark_aqua</code><br/>3</div>
+            </span>
+            <span style="display:flex">
+              <div style="background-color: var(--color-4)" onclick="addCode(event,4)"><code>dark_red</code><br/>4</div>
+              <div style="background-color: var(--color-5)" onclick="addCode(event,5)"><code>dark_purple</code><br/>5</div>
+              <div style="background-color: var(--color-6)" onclick="addCode(event,6)"><code>gold</code><br/>6</div>
+              <div style="background-color: var(--color-7)" onclick="addCode(event,7)"><code>gray</code><br/>7</div>
+            </span>
+            <span style="display:flex">
+              <div style="background-color: var(--color-8)" onclick="addCode(event,8)"><code>dark_gray</code><br/>8</div>
+              <div style="background-color: var(--color-9)" onclick="addCode(event,9)"><code>blue</code><br/>9</div>
+              <div style="background-color: var(--color-a);color:black" onclick="addCode(event,'a')"><code>green</code><br/>a</div>
+              <div style="background-color: var(--color-b);color:black" onclick="addCode(event,'b')"><code>aqua</code><br/>b</div>
+            </span>
+            <span style="display:flex">
+              <div style="background-color: var(--color-c);color:black" onclick="addCode(event,'c')"><code>red</code><br/>c</div>
+              <div style="background-color: var(--color-d);color:black" onclick="addCode(event,'d')"><code>light_purple</code><br/>d</div>
+              <div style="background-color: var(--color-e);color:black" onclick="addCode(event,'e')"><code>yellow</code><br/>e</div>
+              <div style="background-color: var(--color-f);color:black" onclick="addCode(event,'f')"><code>white</code><br/>f</div>
+            </span>
+            <span style="display:flex" class="formatValues">
+              <div style="background-color: var(--color-8)" onclick="addCode(event,'l')"><b>Bold</b></div>
+              <div style="background-color: var(--color-8)" onclick="addCode(event,'o')"><i>Italic</i></div>
+              <div style="background-color: var(--color-8)" onclick="addCode(event,'n')"><u>Underline</u></div>
+            </span>
+            <span style="display:flex" class="formatValues">
+              <div style="background-color: var(--color-8)" onclick="addCode(event,'m')"><s>Strike</s></div>
+              <div style="background-color: var(--color-8)" onclick="addCode(event,'k')">Obfuscated</div>
+              <div style="background-color: var(--color-8)" onclick="addCode(event,'r')">Reset</div>
+            </span>
+          </div>
+          <div>
+              <div class="header">Presets</div><button style="float:right" onclick="addPreset(document.getElementById('tagInput').value)">Add New</button>
+              <ul id="presetList"></ul>
+          </div>
+      </div> 
+      <span style="display:flex;color:#999;font-size: 0.8rem;align-items: center;justify-content: center;padding-bottom:10px">
+				© Lucy Poulton 2020 | Girl in training <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" style="height:1em;border-radius:0.2em;margin-left: 5px;">
+					<path fill="#5BCEFA" d="M0 0h800v480H0z"></path>
+					<path fill="#F5A9B8" d="M0 96h800v288H0z"></path>
+					<path fill="#FFF" d="M0 192h800v96H0z"></path>
+				  </svg></span>
+    </div> 
+    <script>
+        updatePresetsUi();
+        updateText();
+    </script>
+  </body>
+</html>
