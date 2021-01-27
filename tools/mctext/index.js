@@ -64,6 +64,7 @@ function formatTextLegacy(text) {
 }
 
 function parseTextComponent(component) {
+    if (typeof component["text"] != "string") throw SyntaxError();
     var span = document.createElement("span");
     span.innerText = component["text"];
     var decoration = "";
