@@ -80,7 +80,7 @@ function exportText() {
         let hex = hslToHex(hues[hue], sat, light);
         switch (format) {
             case "json":
-                output += `{text:"${text[hue].replace("\\", "")}", "color":"#${hex}"}`;
+                output += `{"text":"${text[hue].replace("\\", "")}", "color":"#${hex}"}`;
                 if (hue != text.length - 1) output += ", ";
                 break;
             case "spigot":
