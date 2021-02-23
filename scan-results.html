@@ -1,0 +1,82 @@
+<html>
+<head>
+    <style>
+        body {
+            color: #fff;
+            background: #2b2b2b;
+        }
+
+        tr:nth-child(2n) {
+            background: #333;
+        }
+
+        td {
+            padding: 0 10px;
+            text-align: center;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .gold {
+            color: #ccaa00;
+        }
+
+        .green {
+            color: forestgreen;
+        }
+
+        .blue {
+            color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>Total servers: <span id="server-count"></span></span>
+</div>
+<table>
+    <tbody id="results">
+    <tr>
+        <th>Port</th>
+        <th>Ver.</th>
+        <th>Software</th>
+        <th>Players</th>
+        <th>Auth</th>
+        <th>MotD</th>
+    </tr>
+    </tbody>
+</table>
+</body>
+<script>
+    try {
+        let data = JSON.parse(atob(new URLSearchParams(window.location.search).get('data')));
+        document.getElementById("server-count").textContent = data.length;
+        for (let srv of data) {
+            let serverClass = "red";
+            let authClass = "red";
+
+            if (srv[2].match(/(.*Cord)|Waterfall/)) serverClass = "blue";
+            else if (srv[2].match(/.*1\.16.5/)) serverClass = "green";
+            else if (srv[2].match(/.*1\.16.*/)) serverClass = "gold";
+
+            if (srv[4] == "IPF") authClass = "blue";
+            else if (srv[4] == "Online") authClass = "green";
+            else if (srv[4] == "Offline") authclass = "gold";
+
+            document.getElementById("results").innerHTML += `
+			       <tr>
+			       <td>${srv[0]}</td>
+			       <td>${srv[1]}</td>
+			       <td class="${serverClass}">${srv[2]}</td>
+			       <td>${srv[3]}</td>
+			       <td class="${authClass}">${srv[4]}</td>
+			       <td>${srv[5]}</td>
+			       </tr>`;
+        }
+    } catch (SyntaxError) {
+        document.body.innerHTML = `<h1>Invalid input</h1>`
+    }
+</script>
+</html>
