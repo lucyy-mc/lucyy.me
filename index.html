@@ -13,50 +13,29 @@ stuff is much tidier.
 <head>
 	<title>__lucyy</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw==" crossorigin="anonymous" />
 </head>
 
 <body>
 	<script>
-		function copyDiscord() {
-			let textArea = document.createElement("textarea");
-			textArea.value = "__lucyy#0001";
-
-			// Avoid scrolling to bottom
-			textArea.style.top = "0";
-			textArea.style.left = "0";
-			textArea.style.position = "fixed";
-
-			document.body.appendChild(textArea);
-			textArea.focus();
-			textArea.select();
-
-			document.execCommand('copy');
-
-			document.body.removeChild(textArea);
-
-			let copyModal = document.createElement("div");
-			copyModal.classList.add("modal");
-			copyModal.innerHTML = `Copied!`;
-			document.body.appendChild(copyModal);
-
-			setTimeout(() => copyModal.classList.add("fadeIn"), 10);
-			setTimeout(() => copyModal.classList.remove("fadeIn"), 1500);
-			setTimeout(() => copyModal.remove(), 2000);
+		function discord() {
+            window.open("https://support.lucyy.me", "_blank");
 		}
 
 		function github() {
-			window.open("https://github.com/lucyy-mc", "_blank");
+			window.open("https://git.lucyy.me/", "_blank");
 		}
+        function email() {
+            window.open("mailto:lucy@poulton.xyz", "_blank");
+        }
 
 	</script>
 
 	<div class="header" style="border-radius: 0;">
 		<img src="head.png">
 		<span>__lucyy</span>
-		<i onclick="copyDiscord()" class="fab fa-discord"></i>
-		<a href="mailto:lucy@poulton.xyz"><i class="fas fa-envelope"></i></a>
-		<i onclick="github()" class="fab fa-github"></i>
+		<ion-icon name="git-branch-outline" onclick="github()"></ion-icon>
+		<ion-icon name="mail-outline" onclick="email()"></ion-icon></a>
+		<ion-icon name="logo-discord" onclick="discord()"></ion-icon>
 	</div>
 	<div class="container" style="margin:20px">
 		<h1 style="text-align: center;">Hey, thanks for stopping by!</h1>
@@ -65,23 +44,13 @@ stuff is much tidier.
 				My name's Lucy. I've been working with computers and
 				programming for more than half my life now.
 				I've picked up all kinds of skills along the way and I love to use them to help others.
-				My specialism is in Minecraft servers (specfically Bukkit and BungeeCord), but I'm
+				My specialism is in Minecraft servers, Discord bots and web content, but I'm
 				flexible and capable of much more. If you're after something specific, please do get in
 				touch!
 			</p>
 			<p>
 				I try not to take myself too seriously, but I have a keen eye for detail and take pride in
 				producing the absolute best work that I can.
-			</p>
-			<p>
-				I'm full-stack - no job is too big or small! <i class="fab fa-java"></i>
-				<i class="fab fa-python"></i>
-				<i class="fab fa-html5"></i>
-				<i class="fab fa-css3-alt"></i>
-				<i class="fab fa-js"></i>
-				<i class="fab fa-angular"></i>
-				<i class="fas fa-terminal"></i>
-				<span>C#</span>
 			</p>
 			<h1 style="margin-bottom: 0;margin-top:80px">Portfolio</h1>
 			<p style="margin-top: 0;">Here's some of my more recent work.</p>
@@ -94,51 +63,45 @@ stuff is much tidier.
 					<span>
 						Putting the "pro" in "pronouns".</span>
 					<ul>
-						<li>Spigot plugin
-							<i class="fab fa-java"></i>
-						</li>
+						<li>Spigot plugin</li>
 					</ul>
 				</div>
 				<div>
 					<div class="header">
-						<img src="https://cdn.discordapp.com/icons/771130052162879539/641ddf6cc5af224f0fa363e26c964fbb.webp?size=128">
-						<a href="https://top.gg/bot/757233366612574248">QT Bot</a>
+						<a href="https://paste.lucyy.me">Lucy's Pretty Pastebin</a>
 					</div>
 					<span>
-						QT Bot is the most wholesome Discord bot to ever exist. I work on it with some friends.
+						Who says pastebins have to be ugly?
 					</span>
 					<ul>
-						<li>Discord bot
-							<i class="fab fa-js"></i>
-						</li>
+						<li>Web app</li>
 					</ul>
 				</div>
 
 				<div>
 					<div class="header">
-						<img src="grass.webp">
-						<a href="#">Server Tools for MC</a>
+						<a href="/tools">Server Tools for MC</a>
 					</div>
 					<span>
-						<p style="font-size: 0.8em;">(still sorting out hosting for these, they'll be up soon!)</p>
 						Over the years I've put together a few web tools to make administering Minecraft servers
 						a little easier. Not affiliated with Mojang!
 					</span>
 					<ul>
-						<li>Web tools <i class="fab fa-html5"></i>
-							<i class="fab fa-css3-alt"></i>
-							<i class="fab fa-js"></i></li>
+						<li>Web app</li>
 					</ul>
 				</div>
 			</div>
 			<span style="display:flex;color:#555;font-size: 0.8rem;align-items: center;justify-content: center;">
-				© Lucy Poulton 2020 | Girl in training <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" 
+				© Lucy Poulton 2020 |&nbsp;<a href="sitemap.html" style="color: #222;text-decoration: none">Sitemap</a>&nbsp;| Girl in training <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480"
 				style="height:1em;border-radius:0.2em;margin-left: 5px;">
 					<path fill="#5BCEFA" d="M0 0h800v480H0z"/>
 					<path fill="#F5A9B8" d="M0 96h800v288H0z"/>
 					<path fill="#FFF" d="M0 192h800v96H0z"/>
 				  </svg></span>
 		</div>
+		<script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+	</div>
 </body>
 
 </html>
